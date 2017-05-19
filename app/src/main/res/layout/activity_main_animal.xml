@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/default_padding"
+    tools:context="com.example.p0t4t0.animals.MainAnimalActivity">
+
+    <TextView
+        android:id="@+id/animal_spies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        tools:text="Animal Spies"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_space" />
+
+    <TextView
+        android:id="@+id/animal_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        tools:text="Animal Name"/>
+
+    <TextView
+        android:id="@+id/animal_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        tools:text="Animal Weight"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_space" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/update_button_text" />
+
+</LinearLayout>
