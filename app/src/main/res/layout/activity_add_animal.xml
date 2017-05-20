@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="com.example.p0t4t0.animals.AddAnimalActivity">
+
+    <EditText
+        android:id="@+id/animal_spies_edit_text"
+        android:layout_width="@dimen/default_edit_text_width"
+        android:layout_height="wrap_content"
+        android:hint="@string/animal_spies"/>
+
+    <EditText
+        android:id="@+id/animal_name_edit_text"
+        android:layout_width="@dimen/default_edit_text_width"
+        android:layout_height="wrap_content"
+        android:hint="@string/animal_name"/>
+
+    <EditText
+        android:id="@+id/animal_weight_edit_text"
+        android:layout_width="@dimen/default_edit_text_width"
+        android:layout_height="wrap_content"
+        android:hint="@string/animal_weight"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/create_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/create_button" />
+
+</LinearLayout>
