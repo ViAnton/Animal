@@ -15,7 +15,7 @@ import com.example.p0t4t0.animals.animals.AnimalLoader;
 
 import java.util.List;
 
-public class MainAnimalActivity extends AppCompatActivity {
+public class AnimalListActivity extends AppCompatActivity {
 
     private final static int LOADER_ID = 969;
     private ListView mListView;
@@ -53,7 +53,7 @@ public class MainAnimalActivity extends AppCompatActivity {
 
         @Override
         public Loader<List<Animal>> onCreateLoader(int id, Bundle args) {
-            return new AnimalLoader(MainAnimalActivity.this);
+            return new AnimalLoader(AnimalListActivity.this);
         }
 
         @Override
