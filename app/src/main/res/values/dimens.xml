@@ -2,4 +2,5 @@
 <resources>
     <dimen name="default_padding">16dp</dimen>
     <dimen name="default_space">16dp</dimen>
+    <dimen name="default_edit_text_width">250dp</dimen>
 </resources>
