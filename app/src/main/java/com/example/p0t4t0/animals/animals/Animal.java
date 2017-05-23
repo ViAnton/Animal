@@ -22,4 +22,25 @@ public class Animal {
     public int getWeight() {
         return weight;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Animal)) return false;
+
+        Animal animal = (Animal) o;
+
+        return weight == animal.weight
+                && spies.equals(animal.spies)
+                && name.equals(animal.name);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = spies.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + weight;
+        return result;
+    }
 }
