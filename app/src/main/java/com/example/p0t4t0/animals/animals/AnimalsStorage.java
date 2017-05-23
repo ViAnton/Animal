@@ -4,26 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimalsStorage {
-    private final static List<Animal> mAnimals = new ArrayList<>();
-    private final static List<OnAnimalAddedListener> mOnAnimalAddedListeners = new ArrayList<>();
+    private final List<Animal> mAnimals;
+    private final List<OnAnimalAddedListener> mOnAnimalAddedListeners;
 
-    static {
+    public AnimalsStorage() {
+        mAnimals = new ArrayList<>();
+        mOnAnimalAddedListeners = new ArrayList<>();
         generateAnimals();
     }
 
-    public static List<Animal> getAnimals() {
+    public List<Animal> getAnimals() {
         return new ArrayList<>(mAnimals);
     }
 
-    public static boolean addListener(OnAnimalAddedListener listener) {
+    public boolean addListener(OnAnimalAddedListener listener) {
         return mOnAnimalAddedListeners.add(listener);
     }
 
-    public static boolean removeListener(OnAnimalAddedListener listener) {
+    public boolean removeListener(OnAnimalAddedListener listener) {
         return mOnAnimalAddedListeners.remove(listener);
     }
 
-    private static void generateAnimals() {
+    private void generateAnimals() {
         mAnimals.add(new Animal("Кот", "Обормот", 45));
         mAnimals.add(new Animal("Собака", "Пугака", 68));
         mAnimals.add(new Animal("Мышь", "Глупыш", 12));
@@ -31,7 +33,7 @@ public class AnimalsStorage {
         mAnimals.add(new Animal("Бык", "Федя", 100));
     }
 
-    public static void addAnimal(Animal animal) {
+    public void addAnimal(Animal animal) {
         mAnimals.add(animal);
 
         for (OnAnimalAddedListener listener : mOnAnimalAddedListeners)

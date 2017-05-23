@@ -1,7 +1,10 @@
 package com.example.p0t4t0.animals.animals;
 
+import android.app.Application;
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;
+
+import com.example.p0t4t0.animals.AnimalApplicationProvider;
 
 import java.util.List;
 
@@ -9,10 +12,12 @@ public class AnimalLoader extends AsyncTaskLoader<List<Animal>>
         implements AnimalsStorage.OnAnimalAddedListener {
 
     private List<Animal> mCachedAnimalsList;
+    private AnimalsStorage mAnimalsStorage;
 
-    public AnimalLoader(Context context) {
+    public AnimalLoader(Context context, Application mApplication) {
         super(context);
-        AnimalsStorage.addListener(this);
+        mAnimalsStorage = ((AnimalApplicationProvider) mApplication).getAnimalsStorage();
+        mAnimalsStorage.addListener(this);
     }
 
     @Override
@@ -23,7 +28,7 @@ public class AnimalLoader extends AsyncTaskLoader<List<Animal>>
 
     @Override
     public List<Animal> loadInBackground() {
-        return AnimalsStorage.getAnimals();
+        return mAnimalsStorage.getAnimals();
     }
 
     @Override
@@ -34,7 +39,7 @@ public class AnimalLoader extends AsyncTaskLoader<List<Animal>>
 
     @Override
     protected void onReset() {
-        AnimalsStorage.removeListener(this);
+        mAnimalsStorage.removeListener(this);
     }
 
     @Override

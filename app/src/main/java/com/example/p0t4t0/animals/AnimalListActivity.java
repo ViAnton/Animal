@@ -1,5 +1,6 @@
 package com.example.p0t4t0.animals;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
@@ -53,7 +54,7 @@ public class AnimalListActivity extends AppCompatActivity {
 
         @Override
         public Loader<List<Animal>> onCreateLoader(int id, Bundle args) {
-            return new AnimalLoader(AnimalListActivity.this);
+            return new AnimalLoader(AnimalListActivity.this, getApplication());
         }
 
         @Override

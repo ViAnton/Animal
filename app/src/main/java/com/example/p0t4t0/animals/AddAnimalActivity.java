@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.p0t4t0.animals.animals.Animal;
-import com.example.p0t4t0.animals.animals.AnimalsStorage;
 
 public class AddAnimalActivity extends AppCompatActivity {
 
@@ -40,7 +39,9 @@ public class AddAnimalActivity extends AppCompatActivity {
 
             if (checkArgs(spies, name, weight)) {
                 Animal animal = new Animal(spies, name, Integer.parseInt(weight));
-                AnimalsStorage.addAnimal(animal);
+                ((AnimalApplicationProvider) getApplication())
+                        .getAnimalsStorage()
+                        .addAnimal(animal);
                 finish();
             } else
                 Toast.makeText(v.getContext(),
